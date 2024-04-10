@@ -1,5 +1,5 @@
 def range_sum(start, end):
-    # Sqap start and end if start is greater than end
+    # Swap start and end if start is greater than end
 
     if start > end:
         start, end = end, start
