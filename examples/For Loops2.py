@@ -3,12 +3,11 @@ def frac_sum(n):
     '''
     
     total = 0
-    denominator = 1
 
-    for i in range(1, n):
-        total = total + 1/denominator
-        denominator+=1
+    for i in range(1, n+1):
+        total = total + 1/i
     
+
     return total
 
 
