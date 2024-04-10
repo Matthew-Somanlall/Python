@@ -2,8 +2,8 @@ def pi_ish(n:int) -> float:
     '''
     '''
 
-    total = 0
-    operator = 1
+    total, operator = 0, 1
+    
     if isinstance((n/2), int):
         n = n-1
 
