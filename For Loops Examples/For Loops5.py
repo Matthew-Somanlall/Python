@@ -5,7 +5,7 @@ def num_spaces(s:str) -> int:
 
     for charater in s:
 
-        # If the current character is a space, increment num_spaces
+        # If the current character is a space, increment num_spaces by 1
         if charater == ' ':
             num_spaces += 1
 
