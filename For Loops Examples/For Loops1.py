@@ -1,4 +1,4 @@
-def range_sum(start, end):
+def range_sum(start, end) -> float:
     # Swap start and end if start is greater than end
 
     if start > end:
