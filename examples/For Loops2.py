@@ -1,4 +1,4 @@
-def frac_sum(n):
+def frac_sum(n:int) -> float:
     '''
     '''
     
