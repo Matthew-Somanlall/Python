@@ -10,11 +10,11 @@ def pi_ish(n:int) -> float:
     for i in range(1, (n+1), 2):
         # If operator is 1, add 4/i to total and set operator to -1
         if operator == 1:
-            total = total + (4/i)
+            total += (4/i)
             operator = -1
         # If operator is -1, subtract 4/i from total and set operator to 1
         elif operator == -1:
-            total = total - (4/i)
+            total -= (4/i)
             operator = 1
     
     # Return the total as a float
