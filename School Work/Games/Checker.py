@@ -18,9 +18,9 @@ def checker(n:int) -> str:
             if i > 0:
                 string += '|\n'
             if i % 2 == 0:
-                string += f'{odd}' + f'{chr(9608)}{chr(9608)}'
+                string += f'{odd}' + f'██'
             else:
-                string += f'  {chr(9608)}{chr(9608)}' * ( n // 2 )
+                string += f'  ██' * ( n // 2 )
                 string += '  '
 
 
