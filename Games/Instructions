@@ -1,0 +1,52 @@
+'''
+This exercise will involve (and thus nicely review) the following:
+  -while loops
+  -if conditions
+  -building up strings
+  -for loops
+  -problem solving (as usual!)
+  
+1. Write a program that that plays the following dice game:
+   Two separate 6-sided dice are rolled.
+    -When the numbers on the dice are 1 apart, 2 points are earned
+    -When the numbers on the dice are 4 apart, 3 points are earned
+    -When the numbers on the dice have a sum of 7, 1 point is lost
+    -It is possible that a couple of these cases could both happen in one roll.
+   This process will repeat until the numbers on the dice match each other
+   (often called 'doubles').  Print the total points after each roll.
+
+2. Modify the code so that it is in a function called 'dice_game()', and instead
+   of printing it will build up a string with each roll's results.
+   Each roll will add a line like the the following:  6,5: 8
+   This shows each of the individual dice, then the updated total points
+   The last line of the string (when 'doubles' are rolled) will look like: 3,3: DONE
+   A final line will be added to the START of the string that shows the total
+   points (in the form "## POINTS"), then the full results of the game below it.
+   This built-up string should be RETURNED from the function.
+       sample call:    results = dice_game()
+                       print(results)
+
+       might output:    8 POINTS
+                        5,4: 2
+                        1,5: 5
+                        3,4: 6
+                        2,5: 5
+                        6,2: 8
+                        6,6: DONE
+               
+   
+3. Modify the function so that it takes an int argument representing how many 
+   'rounds' to repeat the game to the game.  Each game's results will be built
+   up in the same large string, with a blank line between rounds.
+   At the end a final line will be added that includes the total number of points earned across all rounds, like this:  After 5 rounds: 34 points total
+       sample call:    results = dice_game(5)
+                       print(results)
+'''
+
+from random import randrange
+
+#RECALL: to get a single random 6-sided die value:
+
+for roll in range(0, 30):
+    dice_roll = randrange(1, 7)
+    print(dice_roll)
