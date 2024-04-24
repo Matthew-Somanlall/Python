@@ -9,14 +9,14 @@ def checker(n:int) -> str:
         if n / 2 == int(n / 2):
 
             if i % 2 == 0:
-                string += f'{odd}|\n'
+                string += f'{odd}\n'
 
             else:
-                string += f'{even}|\n'
+                string += f'{even}\n'
 
         else:
             if i > 0:
-                string += '|\n'
+                string += '\n'
             if i % 2 == 0:
                 string += f'{odd}' + f'██'
             else:
