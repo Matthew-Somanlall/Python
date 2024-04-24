@@ -1,4 +1,5 @@
 def text_block(text: str) -> str:
+    
     length = len(text)
     out = ''
 

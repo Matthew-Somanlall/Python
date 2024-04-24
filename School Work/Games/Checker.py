@@ -25,3 +25,5 @@ def checker(n:int) -> str:
 
 
     return string
+
+print (checker(10))
