@@ -7,11 +7,11 @@ def square_root(n:float) -> float:
     est = 5 * (10**((log(n, 10)/2)-1))
 
     while isclose(est, n) == False:
-        print("/")
+
         est = (est+(n/est))/2
 
     return est
-print(".")
+
 print (square_root(10))
 
 
