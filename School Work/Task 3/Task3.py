@@ -6,13 +6,13 @@ from math import isclose
 def square_root(n:float) -> float:
     est = 5 * (10**((log(n, 10)/2)-1))
 
-    while isclose(est, n) == False:
+    while isclose(est, n/est) == False:
 
         est = (est+(n/est))/2
 
     return est
 
-print(square_root(10))
+print(square_root(100))
 
 
 #function 3
@@ -81,4 +81,75 @@ def text_to_braille(l:str) -> str:
 
     return out
 
-print (text_to_braille('abcdefghijklmnopqrstupqrstuvwxyz'))
+print (text_to_braille('abcdefghijklmnopqrstuvwxyz'))
+
+
+def braille_to_text(l:str) -> str:
+
+    out = ''
+
+    for char  in (l):
+
+        if '\u2801' == char:
+            out += 'a'
+        elif '\u2803' == char:
+            out += 'b'
+        elif '\u2809' == char:
+            out += 'c'
+        elif '\u2819' == char:
+            out += 'd'
+        elif '\u2811' == char:
+            out += 'e'
+        elif '\u280b' == char:
+            out += 'f'
+        elif '\u281b' == char:
+            out += 'g'
+        elif '\u2813' == char:
+            out += 'h'
+        elif '\u280a' == char:
+            out += 'i'
+        elif '\u281a' == char:
+           out += 'j'
+        elif '\u281a' == char:
+            out += 'j'
+        elif '\u2805' == char:
+            out += 'k'
+        elif '\u2807' == char:
+            out += 'l'
+        elif '\u280d' == char:
+            out += 'm'
+        elif '\u281d' == char:
+            out += 'n'
+        elif '\u2815' == char:
+            out += 'o'
+        elif '\u280f' == char:
+            out += 'p'
+        elif '\u281f' == char:
+            out += 'q'
+        elif '\u2817' == char:
+            out += 'r'
+        elif '\u280e' == char:
+            out += 's'
+        elif '\u281e' == char:
+            out += 't'
+        elif '\u2825' == char:
+            out += 'u'
+        elif '\u2827' == char:
+            out += 'v'
+        elif '\u283a' == char:
+            out += 'w'
+        elif '\u282d' == char:
+            out += 'x'
+        elif '\u283d' == char:
+            out += 'y'
+        elif '\u2835' == char:
+            out += 'z'
+        elif char == ' ':
+            out += ' '
+
+    return out
+
+print (braille_to_text('⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚⠅⠇⠍⠝⠕⠏⠟⠗⠎⠞⠥⠧⠺⠭⠽⠵'))
+r = text_to_braille('r')
+print(r)
+print (braille_to_text(r))
