@@ -15,7 +15,23 @@ def square_root(n:float) -> float:
 print(square_root(100))
 
 
-#function 3
+#funtion 2
+def digit_product_sum(n:int) -> str:
+
+    n = str(n)
+    total = 0
+
+    for i in (n):
+        for j in (n):
+            total += (int(i) * int(j))*2 
+
+
+
+    return total
+
+print(digit_product_sum(729))
+
+#function 3 pt.1
 def text_to_braille(l:str) -> str:
 
     out = ''
@@ -83,7 +99,7 @@ def text_to_braille(l:str) -> str:
 
 print (text_to_braille('abcdefghijklmnopqrstuvwxyz'))
 
-
+#function 3 pt.2
 def braille_to_text(l:str) -> str:
 
     out = ''
@@ -150,6 +166,3 @@ def braille_to_text(l:str) -> str:
     return out
 
 print (braille_to_text('⠁⠃⠉⠙⠑⠋⠛⠓⠊⠚⠅⠇⠍⠝⠕⠏⠟⠗⠎⠞⠥⠧⠺⠭⠽⠵'))
-r = text_to_braille('r')
-print(r)
-print (braille_to_text(r))
