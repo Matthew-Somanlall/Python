@@ -22,11 +22,7 @@ def digit_product_sum(n:int) -> str:
         for j in (n):
             total += int(i) * int(j) 
 
-
-
     return total
-
-print(digit_product_sum(93861))
 
 #function 3 pt.1
 def text_to_braille(l:str) -> str:
@@ -159,3 +155,37 @@ def braille_to_text(l:str) -> str:
             out += ' '
 
     return out
+
+right_side = ''
+left_side = ''
+
+
+for i in range(7):
+    for j in range (7):
+        if i == 1:
+            right_side = f'|     |\n|  {chr(9679)}  |\n|     |'
+        elif i == 2:
+            right_side = f'|{chr(9679)}    |\n|     |\n|    {chr(9679)}|'
+        elif i == 3:
+            right_side = f'|{chr(9679)}    |\n|  {chr(9679)}  |\n|    {chr(9679)}|'
+        elif i == 4:
+            right_side = f'|{chr(9679)}   {chr(9679)}|\n|     |\n|{chr(9679)}   {chr(9679)}|'
+        elif i == 5:
+            right_side = f'|{chr(9679)}   {chr(9679)}|\n|  {chr(9679)}  |\n|{chr(9679)}   {chr(9679)}|'
+        elif i == 6:
+            right_side = f'|{chr(9679)} {chr(9679)} {chr(9679)}|\n|     |\n|{chr(9679)} {chr(9679)} {chr(9679)}|'
+        if j == 1:
+            left_side = f'     |\n  {chr(9679)}  |\n     |'
+        elif j == 2:
+            left_side = f'{chr(9679)}    |\n     |\n    {chr(9679)}|'
+        elif j == 3:
+            left_side = f'{chr(9679)}    |\n  {chr(9679)}  |\n    {chr(9679)}|'
+        elif j == 4:
+            left_side = f'{chr(9679)}   {chr(9679)}|\n     |\n{chr(9679)}   {chr(9679)}|'
+        elif j == 5:
+            left_side = f'{chr(9679)}   {chr(9679)}|\n  {chr(9679)}  |\n{chr(9679)}   {chr(9679)}|'
+        elif j == 6:
+            left_side = f'{chr(9679)} {chr(9679)} {chr(9679)}|\n     |\n{chr(9679)} {chr(9679)} {chr(9679)}|'
+        print (f' ___________ ')
+        print (left_side)
+        print (f' ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ')
