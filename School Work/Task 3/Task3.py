@@ -183,13 +183,17 @@ for i in range(7):
             leftside_2 = f'     |'
             leftside_3 = f'    {chr(9679)}|'
         elif j == 3:
-            leftside_1 = f'{chr(9679)}    |'
+            left_side_1 = f'{chr(9679)}    |'
             leftside_2 = f'  {chr(9679)}  |'
             leftside_3 = f'    {chr(9679)}|'
         elif j == 4:
-            left_side = f'{chr(9679)}   {chr(9679)}|\n     |\n{chr(9679)}   {chr(9679)}|'
+            left_side_1 = f'{chr(9679)}   {chr(9679)}|'
+            leftside_2 = '     |'
+            leftside_3 = f'{chr(9679)}   {chr(9679)}|'
         elif j == 5:
-            left_side = f'{chr(9679)}   {chr(9679)}|\n  {chr(9679)}  |\n{chr(9679)}   {chr(9679)}|'
+            left_side_1 = f'{chr(9679)}   {chr(9679)}|'
+            leftside_2 = f'  {chr(9679)}  |'
+            leftside_3 = f'{chr(9679)}   {chr(9679)}|'
         elif j == 6:
             left_side = f'{chr(9679)} {chr(9679)} {chr(9679)}|\n     |\n{chr(9679)} {chr(9679)} {chr(9679)}|'
         print (f' ___________ ')
