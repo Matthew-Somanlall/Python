@@ -2,7 +2,7 @@
 from math import log
 from math import isclose
 
-#function 1
+# Function 1
 def square_root(n:float) -> float:
     est = 5 * (10**((log(n, 10)/2)-1))
 
@@ -12,7 +12,7 @@ def square_root(n:float) -> float:
 
     return est
 
-#funtion 2
+# Funtion 2
 def digit_product_sum(n:int) -> str:
 
     n = str(n)
@@ -24,7 +24,7 @@ def digit_product_sum(n:int) -> str:
 
     return total
 
-#function 3 pt.1
+# Function 3 pt.1
 def text_to_braille(l:str) -> str:
 
     out = ''
@@ -90,7 +90,7 @@ def text_to_braille(l:str) -> str:
 
     return out
 
-#function 3 pt.2
+# Function 3 pt.2
 def braille_to_text(l:str) -> str:
 
     out = ''
@@ -156,24 +156,14 @@ def braille_to_text(l:str) -> str:
 
     return out
 
+
+# Function 4
 right_side = ''
 left_side = ''
 
-
 for i in range(7):
-    for j in range (6):
-        if i == 1:
-            right_side = f'|     |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|     |{leftside_3}'
-        elif i == 2:
-            right_side = f'|{chr(9679)}    |{left_side_1}\n|     |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
-        elif i == 3:
-            right_side = f'|{chr(9679)}    |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
-        elif i == 4:
-            right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
-        elif i == 5:
-            right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
-        elif i == 6:
-            right_side = f'|{chr(9679)} {chr(9679)} {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)} {chr(9679)} {chr(9679)}|{leftside_3}'
+    for j in range (7):
+        
         if j == 1:
             left_side_1 = f'     |'
             leftside_2= f'  {chr(9679)}  |'
@@ -198,6 +188,24 @@ for i in range(7):
             left_side_1 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
             leftside_2 = '     |'
             leftside_3 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
+        
+        if i == 1:
+            right_side = f'|     |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|     |{leftside_3}'
+        elif i == 2:
+            right_side = f'|{chr(9679)}    |{left_side_1}\n|     |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
+        elif i == 3:
+            right_side = f'|{chr(9679)}    |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
+        elif i == 4:
+            right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
+        elif i == 5:
+            right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
+        elif i == 6:
+            right_side = f'|{chr(9679)} {chr(9679)} {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)} {chr(9679)} {chr(9679)}|{leftside_3}'
+
         print (f' ___________ ')
         print (right_side)
         print (f' ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ')
+
+        left_side_1 = ''
+        leftside_2 = ''
+        leftside_3 = ''
