@@ -161,7 +161,7 @@ left_side = ''
 
 
 for i in range(7):
-    for j in range (7):
+    for j in range (6):
         if i == 1:
             right_side = f'|     |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|     |{leftside_3}'
         elif i == 2:
@@ -195,7 +195,9 @@ for i in range(7):
             leftside_2 = f'  {chr(9679)}  |'
             leftside_3 = f'{chr(9679)}   {chr(9679)}|'
         elif j == 6:
-            left_side = f'{chr(9679)} {chr(9679)} {chr(9679)}|\n     |\n{chr(9679)} {chr(9679)} {chr(9679)}|'
+            left_side_1 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
+            leftside_2 = '     |'
+            leftside_3 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
         print (f' ___________ ')
         print (right_side)
         print (f' ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ')
