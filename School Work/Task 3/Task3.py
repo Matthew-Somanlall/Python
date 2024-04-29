@@ -164,7 +164,11 @@ left_side = ''
 for i in range(7):
     for j in range (7):
         
-        if j == 1:
+        if j == 0:
+            left_side_1 = f'     |'
+            leftside_2 = f'     |'
+            leftside_3 = f'     |'
+        elif j == 1:
             left_side_1 = f'     |'
             leftside_2= f'  {chr(9679)}  |'
             leftside_3 = f'     |'
@@ -188,8 +192,9 @@ for i in range(7):
             left_side_1 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
             leftside_2 = '     |'
             leftside_3 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
-        
-        if i == 1:
+        if i == 0:
+            right_side = f'|     |{left_side_1}\n|     |{leftside_2}\n|     |{leftside_3}'
+        elif i == 1:
             right_side = f'|     |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|     |{leftside_3}'
         elif i == 2:
             right_side = f'|{chr(9679)}    |{left_side_1}\n|     |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
@@ -205,7 +210,3 @@ for i in range(7):
         print (f' ___________ ')
         print (right_side)
         print (f' ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ')
-
-        left_side_1 = ''
-        leftside_2 = ''
-        leftside_3 = ''
