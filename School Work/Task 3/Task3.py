@@ -30,7 +30,7 @@ def text_to_braille(l:str) -> str:
     out = ''
 
     for char  in (l):
-
+        
         if char == 'a':
             out += f'\u2801'
         elif char == 'b':
@@ -96,7 +96,7 @@ def braille_to_text(l:str) -> str:
     out = ''
 
     for char  in (l):
-
+        
         if '\u2801' == char:
             out += 'a'
         elif '\u2803' == char:
@@ -158,55 +158,55 @@ def braille_to_text(l:str) -> str:
 
 
 # Function 4
-right_side = ''
-left_side = ''
+def generate_dominoes(i:int ,j:int) -> str:
+    right_side = ''
 
-for i in range(7):
-    for j in range (7):
         
-        if j == 0:
-            left_side_1 = f'     |'
-            leftside_2 = f'     |'
-            leftside_3 = f'     |'
-        elif j == 1:
-            left_side_1 = f'     |'
-            leftside_2= f'  {chr(9679)}  |'
-            leftside_3 = f'     |'
-        elif j == 2:
-            left_side_1 = f'{chr(9679)}    |'
-            leftside_2 = f'     |'
-            leftside_3 = f'    {chr(9679)}|'
-        elif j == 3:
-            left_side_1 = f'{chr(9679)}    |'
-            leftside_2 = f'  {chr(9679)}  |'
-            leftside_3 = f'    {chr(9679)}|'
-        elif j == 4:
-            left_side_1 = f'{chr(9679)}   {chr(9679)}|'
-            leftside_2 = '     |'
-            leftside_3 = f'{chr(9679)}   {chr(9679)}|'
-        elif j == 5:
-            left_side_1 = f'{chr(9679)}   {chr(9679)}|'
-            leftside_2 = f'  {chr(9679)}  |'
-            leftside_3 = f'{chr(9679)}   {chr(9679)}|'
-        elif j == 6:
-            left_side_1 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
-            leftside_2 = '     |'
-            leftside_3 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
-        if i == 0:
-            right_side = f'|     |{left_side_1}\n|     |{leftside_2}\n|     |{leftside_3}'
-        elif i == 1:
-            right_side = f'|     |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|     |{leftside_3}'
-        elif i == 2:
-            right_side = f'|{chr(9679)}    |{left_side_1}\n|     |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
-        elif i == 3:
-            right_side = f'|{chr(9679)}    |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
-        elif i == 4:
-            right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
-        elif i == 5:
-            right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
-        elif i == 6:
-            right_side = f'|{chr(9679)} {chr(9679)} {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)} {chr(9679)} {chr(9679)}|{leftside_3}'
+    if j == 0:
+        left_side_1 = f'     |'
+        leftside_2 = f'     |'
+        leftside_3 = f'     |'
+    elif j == 1:
+        left_side_1 = f'     |'
+        leftside_2= f'  {chr(9679)}  |'
+        leftside_3 = f'     |'
+    elif j == 2:
+        left_side_1 = f'{chr(9679)}    |'
+        leftside_2 = f'     |'
+        leftside_3 = f'    {chr(9679)}|'
+    elif j == 3:
+        left_side_1 = f'{chr(9679)}    |'
+        leftside_2 = f'  {chr(9679)}  |'
+        leftside_3 = f'    {chr(9679)}|'
+    elif j == 4:
+        left_side_1 = f'{chr(9679)}   {chr(9679)}|'
+        leftside_2 = '     |'
+        leftside_3 = f'{chr(9679)}   {chr(9679)}|'
+    elif j == 5:
+        left_side_1 = f'{chr(9679)}   {chr(9679)}|'
+        leftside_2 = f'  {chr(9679)}  |'
+        leftside_3 = f'{chr(9679)}   {chr(9679)}|'
+    elif j == 6:
+        left_side_1 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
+        leftside_2 = '     |'
+        leftside_3 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
+    if i == 0:
+        right_side = f'|     |{left_side_1}\n|     |{leftside_2}\n|     |{leftside_3}'
+    elif i == 1:
+        right_side = f'|     |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|     |{leftside_3}'
+    elif i == 2:
+        right_side = f'|{chr(9679)}    |{left_side_1}\n|     |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
+    elif i == 3:
+        right_side = f'|{chr(9679)}    |{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|    {chr(9679)}|{leftside_3}'
+    elif i == 4:
+        right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
+    elif i == 5:
+        right_side = f'|{chr(9679)}   {chr(9679)}|{left_side_1}\n|  {chr(9679)}  |{leftside_2}\n|{chr(9679)}   {chr(9679)}|{leftside_3}'
+    elif i == 6:
+        right_side = f'|{chr(9679)} {chr(9679)} {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)} {chr(9679)} {chr(9679)}|{leftside_3}'
 
-        print (f' ___________ ')
-        print (right_side)
-        print (f' ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ')
+    string = f' ___________ \n{right_side}\n ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ '
+    
+    return string
+
+print(generate_dominoes(3,5))
