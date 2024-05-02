@@ -254,3 +254,5 @@ def tree_box(n: int) -> str:
     
     # Return the box string
     return string
+
+print(tree_box(0))
