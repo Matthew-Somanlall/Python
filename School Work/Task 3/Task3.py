@@ -228,22 +228,28 @@ def tree_box(n:int) -> str:
     string = f'+{dash}+\n'
     
 
-    for i in range (n+1):
-  
+    for i in range (1 ,n+1):
+        
+        space = ' '
+        space = space * (n - i)
         double_slash = '\\' * i
         single_slash = '/' * i
-        string += f'|{single_slash}{double_slash}|\n'
+        string += f'|{space}{single_slash}{double_slash}{space}|\n'
 
     for i in range(n):
         if i % 2 == 0:
+            space = ' '
+            space = space * (n-1)
             even = '|}'
-            string += f'|{even}|\n'
+            string += f'|{space}{even}{space}|\n'
         else:
+            space = ' '
+            space = space * (n-1)
             odd = '{|'
-            string += f'|{odd}|\n'
+            string += f'|{space}{odd}{space}|\n'
 
     
     string += f'+{dash}+'
     return string
 
-print (tree_box(5))
+print (tree_box(3))
