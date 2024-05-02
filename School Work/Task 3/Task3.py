@@ -226,14 +226,13 @@ def tree_box(n:int) -> str:
     double_slash = '\\'
     dash = '-' * (n * 2)
     string = f'+{dash}+\n'
-    space = ' '
- 
+    
+
     for i in range (n+1):
   
-        space = space *2
         double_slash = '\\' * i
         single_slash = '/' * i
-        string += f'|{space}{single_slash}{double_slash}{space}|\n'
+        string += f'|{single_slash}{double_slash}|\n'
 
     for i in range(n):
         if i % 2 == 0:
