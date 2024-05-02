@@ -221,35 +221,36 @@ def generate_dominoes(i:int ,j:int) -> str:
     
     return string
 
-def tree_box(n:int) -> str:
+# Function 5 :Generates a tree in a box
+def tree_box(n: int) -> str:
     
-    double_slash = '\\'
-    dash = '-' * (n * 2)
-    string = f'+{dash}+\n'
-    
+    # Initialize variables for the top of the box
+    double_slash = '\\'  # This will be used to create the backslashes in the top and bottom of the box
+    dash = '-' * (n * 2)  # This will be used to create the horizontal lines in the top and bottom of the box
+    string = f'+{dash}+\n'  # This will be the string that represents the box
 
-    for i in range (1 ,n+1):
+    # Loop through the rows of the box
+    for i in range(1, n+1):
         
-        space = ' '
-        space = space * (n - i)
-        double_slash = '\\' * i
-        single_slash = '/' * i
-        string += f'|{space}{single_slash}{double_slash}{space}|\n'
+        # Initialize variables for the current row
+        space = ' ' * (n - i)  # This will be used to create the spaces in the current row
+        double_slash = '\\' * i  # This will be used to create the backslashes in the current row
+        single_slash = '/' * i  # This will be used to create the forward slashes in the current row
+        string += f'|{space}{single_slash}{double_slash}{space}|\n'  # Add the current row to the box string
 
+    # Loop through the rows of the box again to add the even and odd rows
     for i in range(n):
         if i % 2 == 0:
-            space = ' '
-            space = space * (n-1)
-            even = '|}'
-            string += f'|{space}{even}{space}|\n'
+            space = ' ' * (n-1)  # This will be used to create the spaces in the even rows
+            even = '|}'  # This will be used to create the even rows
+            string += f'|{space}{even}{space}|\n'  # Add the even row to the box string
         else:
-            space = ' '
-            space = space * (n-1)
-            odd = '{|'
-            string += f'|{space}{odd}{space}|\n'
+            space = ' ' * (n-1)  # This will be used to create the spaces in the odd rows
+            odd = '{|'  # This will be used to create the odd rows
+            string += f'|{space}{odd}{space}|\n'  # Add the odd row to the box string
 
-    
+    # Add the bottom of the box to the box string
     string += f'+{dash}+'
+    
+    # Return the box string
     return string
-
-print (tree_box(3))
