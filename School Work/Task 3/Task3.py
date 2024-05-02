@@ -2,35 +2,43 @@
 from math import log
 from math import isclose
 
-# Function 1
+# Function 1: Calculate the square root of a number
 def square_root(n:float) -> float:
+    # Initial estimate for the square root, 
+    # using the formula 5 * (10^((log(n, 10)/2)-1)) as a rough starting point
     est = 5 * (10**((log(n, 10)/2)-1))
 
+    # Refine the estimate using the Babylonian method, 
+    # which is an iterative process that converges on the actual square root
     while isclose(est, n/est) == False:
 
         est = (est+(n/est))/2
 
+    # Once the estimate has converged, return it as the square root of n
     return est
 
-# Funtion 2
+# Function 2: Calculate the sum of the products of each digit in a number
 def digit_product_sum(n:int) -> str:
-
+    # Convert the number to a string to iterate over each digit
     n = str(n)
     total = 0
 
+    # Calculate the product of each digit with every other digit
     for i in (n):
         for j in (n):
+            # Multiply the digits and add the product to the total
             total += int(i) * int(j) 
 
-    return total
+    # Return the total as a string
+    return str(total)
 
-# Function 3 pt.1
+# Function 3 pt.1: Convert text to braille
 def text_to_braille(l:str) -> str:
-
     out = ''
 
+    # Iterate over each character in the input string
     for char  in (l):
-        
+        # Replace each character with its corresponding braille character
         if char == 'a':
             out += f'\u2801'
         elif char == 'b':
@@ -88,15 +96,16 @@ def text_to_braille(l:str) -> str:
         elif char == ' ':
             out += ' '
 
+    # Return the braille representation of the input string
     return out
 
-# Function 3 pt.2
+# Function 3 pt.2: Convert braille to text
 def braille_to_text(l:str) -> str:
-
     out = ''
 
+    # Iterate over each braille character in the input string
     for char  in (l):
-        
+        # Replace each braille character with its corresponding text character
         if '\u2801' == char:
             out += 'a'
         elif '\u2803' == char:
@@ -116,7 +125,7 @@ def braille_to_text(l:str) -> str:
         elif '\u280a' == char:
             out += 'i'
         elif '\u281a' == char:
-           out += 'j'
+            out += 'j'
         elif '\u281a' == char:
             out += 'j'
         elif '\u2805' == char:
@@ -154,21 +163,21 @@ def braille_to_text(l:str) -> str:
         elif char == ' ':
             out += ' '
 
+    # Return the text representation of the input braille string
     return out
 
-
-# Function 4
+# Function 4: Generate dominoes
 def generate_dominoes(i:int ,j:int) -> str:
     right_side = ''
 
-        
+    # Generate the left side of the domino based on the value of j
     if j == 0:
         left_side_1 = f'     |'
         leftside_2 = f'     |'
         leftside_3 = f'     |'
     elif j == 1:
         left_side_1 = f'     |'
-        leftside_2= f'  {chr(9679)}  |'
+        leftside_2 = f'  {chr(9679)}  |'
         leftside_3 = f'     |'
     elif j == 2:
         left_side_1 = f'{chr(9679)}    |'
@@ -190,6 +199,8 @@ def generate_dominoes(i:int ,j:int) -> str:
         left_side_1 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
         leftside_2 = '     |'
         leftside_3 = f'{chr(9679)} {chr(9679)} {chr(9679)}|'
+
+    # Generate the right side of the domino based on the value of i
     if i == 0:
         right_side = f'|     |{left_side_1}\n|     |{leftside_2}\n|     |{leftside_3}'
     elif i == 1:
@@ -205,8 +216,35 @@ def generate_dominoes(i:int ,j:int) -> str:
     elif i == 6:
         right_side = f'|{chr(9679)} {chr(9679)} {chr(9679)}|{left_side_1}\n|     |{leftside_2}\n|{chr(9679)} {chr(9679)} {chr(9679)}|{leftside_3}'
 
+    # Combine the left and right sides to form the complete domino
     string = f' ___________ \n{right_side}\n ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ '
     
     return string
 
-print(generate_dominoes(3,5))
+def tree_box(n:int) -> str:
+    
+    double_slash = '\\'
+    dash = '-' * (n * 2)
+    string = f'+{dash}+\n'
+    space = ' '
+ 
+    for i in range (n+1):
+  
+        space = space *2
+        double_slash = '\\' * i
+        single_slash = '/' * i
+        string += f'|{space}{single_slash}{double_slash}{space}|\n'
+
+    for i in range(n):
+        if i % 2 == 0:
+            even = '|}'
+            string += f'|{even}|\n'
+        else:
+            odd = '{|'
+            string += f'|{odd}|\n'
+
+    
+    string += f'+{dash}+'
+    return string
+
+print (tree_box(5))
