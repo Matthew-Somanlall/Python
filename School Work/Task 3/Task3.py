@@ -1,6 +1,7 @@
 
 from math import log
 from math import isclose
+from random import randrange
 
 # Function 1: Calculate the square root of a number
 def square_root(n:float) -> float:
@@ -255,4 +256,50 @@ def tree_box(n: int) -> str:
     # Return the box string
     return string
 
-print(tree_box(0))
+def domino_stack(l, r,p) -> str:
+
+    points = 0
+    game = f'\n{generate_dominoes(l,r)}'
+    ran_l = randrange(1, 6)
+    ran_r = randrange(1, 6)
+    game_num = 1
+    g = True
+
+    while g == True:
+        points = 0
+        while (ran_l == l or ran_r == r or ran_l == r or ran_r == l or (ran_l == l and ran_r == r) or (ran_l == r and ran_r == l) == True) and (p > points) == True:
+            if ran_l == l or ran_r == r:
+                    domino = generate_dominoes(ran_l, ran_r)
+                    game = f'\n{domino + game}'
+                    points += 2
+            elif ran_l == r or ran_r == l:
+                if ran_l == r:
+                    domino = generate_dominoes(ran_r,ran_l)
+                    game = f'\n{domino + game}'
+                    points += 2
+                elif ran_r == l:
+                    domino = generate_dominoes(ran_l,ran_r)
+                    game = f'\n{domino + game}'
+                    points += 2
+            if ran_l == l and ran_r == r:
+                    domino = generate_dominoes(ran_l,ran_r)
+                    game = f'\n{domino + game}'
+                    points += 5
+            elif ran_l == r and ran_r == l:
+                    domino = generate_dominoes(ran_r,ran_l)
+                    game = f'\n{domino + game}'
+                    points += 5
+            ran_l = randrange(1, 6)
+            ran_r = randrange(1, 6)
+        print (f'\n{game}')
+        print(f'Game #{game_num} Points: {points} ')
+        ran_l = randrange(1, 6)
+        ran_r = randrange(1, 6)
+        game_num += 1
+        if points >= p:
+            g = False
+
+
+    return game
+
+print (domino_stack(1,2,10))
