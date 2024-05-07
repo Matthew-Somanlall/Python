@@ -320,6 +320,7 @@ def domino_stack(l: int, r: int, p: int) -> str:
 
     return final
 '''
+
 # Function 6 :Plays a game
 def domino_stack(l: int, r: int, p: int) -> str:
 
@@ -338,37 +339,37 @@ def domino_stack(l: int, r: int, p: int) -> str:
             if (ran_l == l) and (ran_r == r):
                 points += 5
                 domino = domino_str(ran_l,ran_r)
-                game = f'\n{domino + game}'
                 l = ran_l
                 r = ran_r
 
             elif (ran_l == r) and (ran_r == l):
                 points += 5
                 domino = domino_str(ran_r, ran_l)
-                game = f'\n{domino + game}'
                 l = ran_r
                 r = ran_l
 
             elif (ran_l == l) or (ran_r == r):
                 points += 2
                 domino = domino_str(ran_l, ran_r)
-                game = f'\n{domino + game}'
                 l = ran_l
                 r = ran_r
 
             elif (ran_l == r) or (ran_r == l):
                 points += 2
                 domino = domino_str(ran_r, ran_l)
-                game = f'\n{domino + game}'
                 l = ran_r
                 r = ran_l
+            
+            game = f'\n{domino + game}'
 
             ran_l = randrange(1, 6)  # Generate a new random left number
             ran_r = randrange(1, 6)  # Generate a new random right number
 
         final += game + f'\nGame #{game_num} Points: {points}'        
         game_num += 1  # Increment the game number
+        ran_l = randrange(1, 6)  # Generate a new random left number
+        ran_r = randrange(1, 6)  # Generate a new random right number
         if points >= p:  # If the points are greater than or equal to the target points, end the game
             g = False
-
-print(domino_stack(1,2,10))
+    return final
+print(domino_stack(1,2,6))
