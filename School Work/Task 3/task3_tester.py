@@ -13,6 +13,9 @@ while choice != "7":
         add a validation loop for the input number to make sure it is positive
         """
         number = float(input("Number to square root: "))
+        while number < 0:
+            print('you are dumb try again')
+            number = float(input("Number to square root: "))
         
         
         """
@@ -30,9 +33,19 @@ while choice != "7":
         TODO:
         add a validation loop for the number not being negative
         """
+
         low = int(input("Enter a low number for the range: "))
-        
+
         high = int(input("Enter a high number for the range: "))
+
+        while low < 0:
+
+            print("you're dumb try again")
+            low = int(input("Enter a low number for the range: "))
+
+        while high < 0:
+            print("you're dumb try again")
+            high = int(input("Enter a high number for the range: "))
 
         
         """
@@ -56,6 +69,10 @@ while choice != "7":
         braille_menu = "\n1. text to Braille\n2. Braille to text\n--> "
         t_to_b_choice = input(braille_menu)
 
+        while (t_to_b_choice != '1') or (t_to_b_choice != '2'):
+            print("Invalid input. Please enter '1' or '2'.")
+            t_to_b_choice = input(braille_menu)
+    
         
         
         """
@@ -85,6 +102,9 @@ while choice != "7":
         made from numbers 0-6 (inclusive) for each side, resulting in 49
         different dominoes being output (no user input required).
         """
+        for i in range (0, 7):
+            for j in range (0, 7):
+                print(domino_str(i, j))
         
         
         
@@ -97,7 +117,9 @@ while choice != "7":
         add a validation loop for the size of the tree not being negative
         """
         size = int(input("Tree size: "))
-        
+        while size <= 0:
+            print("Invalid input. Please enter a positive number")
+            size = int(input("Tree size: "))
 
         """
         DO NOT EDIT any code below here for this menu option
@@ -120,14 +142,21 @@ while choice != "7":
            -for the target points being positive
         """
         left = int(input("Base domino left # (1 to 5): "))
-
+        while left < 1 or left > 5:
+            print("Invalid input. Please enter a number between 1 and 5")
+            left = int(input("Base domino left # (1 to 5): "))
+        
         
         right = int(input("Base domino right # (1 to 5): "))
-        
+        while right < 1 or right > 5:
+            print("Invalid input. Please enter a number between 1 and 5")
+            right = int(input("Base domino right # (1 to 5): "))
+
         
         points = int(input("Enter a target number of points: "))
-        
-        
+        while points < 0:
+            print("Invalid input. Please enter a positive number")
+            points = int(input("Enter a target number of points: "))        
 
         """
         DO NOT EDIT any code below here for this menu option

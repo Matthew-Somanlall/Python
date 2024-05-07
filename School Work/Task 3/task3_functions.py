@@ -1,4 +1,3 @@
-
 from math import log
 from math import isclose
 from random import randrange
@@ -31,7 +30,7 @@ def digit_product_sum(n:int) -> str:
             total += int(i) * int(j) 
 
     # Return the total as a string
-    return str(total)
+    return total
 
 # Function 3 pt.1: Convert text to braille
 def text_to_braille(l:str) -> str:
@@ -168,7 +167,7 @@ def braille_to_text(l:str) -> str:
     return out
 
 # Function 4: Generate dominoes
-def generate_dominoes(i:int ,j:int) -> str:
+def domino_str(i:int ,j:int) -> str:
     right_side = ''
 
     # Generate the left side of the domino based on the value of j
@@ -256,48 +255,61 @@ def tree_box(n: int) -> str:
     # Return the box string
     return string
 
+# Function 6 :Plays a game
 def domino_stack(l: int, r: int, p: int) -> str:
 
     # Initialize variables for the game
-    none = ''  # This will be the return value of the function
     points = 0  # This will be the total points earned in the game
-    game = f'\n{generate_dominoes(l,r)}'  # This will be the string that represents the game
+    game = f'\n{domino_str(l,r)}'  # This will be the string that represents the game
     ran_l = randrange(1, 6)  # This will be the random left number for the next domino
     ran_r = randrange(1, 6)  # This will be the random right number for the next domino
     game_num = 1  # This will be the current game number
     g = True  # This will be the flag to continue the game
+    final = ''
 
     # Loop through the game
     while g == True:
         points = 0  # Reset the points for each game
+        ran_l = randrange(1, 6)  # Generate a new random left number
+        ran_r = randrange(1, 6)  # Generate a new random right number
         while (ran_l == l or ran_r == r or ran_l == r or ran_r == l or (ran_l == l and ran_r == r) or (ran_l == r and ran_r == l) == True) and (p > points) == True:
-            if ran_l == l or ran_r == r:
-                domino = generate_dominoes(ran_l, ran_r)  # Generate the next domino
-                game = f'\n{domino + game}'  # Add the next domino to the game string
-                points += 2  # Add 2 points for matching the left or right number
-            elif ran_l == r or ran_r == l:
-                if ran_l == r:
-                    domino = generate_dominoes(ran_r,ran_l)  # Generate the next domino
-                    game = f'\n{domino + game}'  # Add the next domino to the game string
-                    points += 2  # Add 2 points for matching the left or right number
-                elif ran_r == l:
-                    domino = generate_dominoes(ran_l,ran_r)  # Generate the next domino
-                    game = f'\n{domino + game}'  # Add the next domino to the game string
-                    points += 2  # Add 2 points for matching the left or right number
-            if ran_l == l and ran_r == r or ran_l == r and ran_r == l:
-                domino = generate_dominoes(ran_l,ran_r)  # Generate the next domino
-                game = f'\n{domino + game}'  # Add the next domino to the game string
-                points += 5  # Add 5 points for matching both the left and right numbers
             ran_l = randrange(1, 6)  # Generate a new random left number
             ran_r = randrange(1, 6)  # Generate a new random right number
-        print (f'\n{game}')  # Print the current game string
-        print(f'Game #{game_num} Points: {points} ')  # Print the current game number and points
+            if (ran_l == l) or (ran_r == r):
+                domino = domino_str(ran_l, ran_r)  # Generate the next domino
+                game = f'\n{domino + game}'  # Add the next domino to the game string
+                points += 2  # Add 2 points for matching the left or right number
+                l = ran_l
+                r = ran_r
+            elif (ran_l == r) or (ran_r == l):
+                if ran_l == r:
+                    domino = domino_str(ran_r,ran_l)  # Generate the next domino
+                    game = f'\n{domino + game}'  # Add the next domino to the game string
+                    points += 2  # Add 2 points for matching the left or right number
+                    l = ran_r
+                    r = ran_l
+                elif ran_r == l:
+                    domino = domino_str(ran_r, ran_l)  # Generate the next domino
+                    game = f'\n{domino + game}'  # Add the next domino to the game string
+                    points += 2  # Add 2 points for matching the left or right number
+                    l = ran_r
+                    r = ran_l
+            if (ran_l == l and ran_r == r) or (ran_l == r and ran_r == l):
+                domino = domino_str(ran_l,ran_r)  # Generate the next domino
+                game = f'\n{domino + game}'  # Add the next domino to the game string
+                points += 5  # Add 5 points for matching both the left and right numbers
+                l = ran_l
+                r = ran_r        
+            ran_l = randrange(1, 6)  # Generate a new random left number
+            ran_r = randrange(1, 6)  # Generate a new random right number
+        
+        final += game + f'\nGame #{game_num} Points: {points}'
         ran_l = randrange(1, 6)  # Generate a new random left number
         ran_r = randrange(1, 6)  # Generate a new random right number
         game_num += 1  # Increment the game number
         if points >= p:  # If the points are greater than or equal to the target points, end the game
             g = False
 
-    return none  # Return the none value
+    return final
 
-print (domino_stack(1,6,10))
+print (domino_stack(1,2,10))
