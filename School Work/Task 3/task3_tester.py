@@ -55,6 +55,15 @@ while choice != "7":
         highest 'digit product sum', and will output that number as well as its
         'digit product sum'
         """
+        max_sum = 0
+        max_num = 0
+        for num in range(low, high + 1):
+            sum = digit_product_sum(num)
+            if sum > max_sum:
+                max_sum = sum
+                max_num = num
+        print(f"The number with the highest digit product sum in the range [{low}, {high}] is {max_num} with a sum of {max_sum}.")
+
         
         
             
