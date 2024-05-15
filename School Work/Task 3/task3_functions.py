@@ -37,7 +37,7 @@ def text_to_braille(l:str) -> str:
     out = ''
 
     # Iterate over each character in the input string
-    for char  in (l):
+    for char in (l):
         # Replace each character with its corresponding braille character
         if char == 'a':
             out += f'\u2801'
