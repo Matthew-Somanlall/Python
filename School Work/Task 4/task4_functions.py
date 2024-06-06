@@ -39,7 +39,20 @@ def get_closest_pair(values1, values2):
 
 #-----------------------------------------------------------------------------
 def get_proper_divisors(number):
-    return []
+    """
+    """
+
+    num_list =[]
+    
+    if number != 1:
+        num_list.append(1)
+
+    for i in range(2, ((number//2)+1)):
+        div_num = number / i
+        if div_num == int(div_num):
+            num_list.append(int(div_num))
+
+    return num_list
 
 
 #-----------------------------------------------------------------------------
@@ -94,15 +107,15 @@ if __name__ == "__main__":
     #print(get_closest(numbers, 10))	 
     
     
-    numbers1 = [5, 9, 0, -3, 15, 8, 4]
-    numbers2 = [12, 13, 8, 2, 0, 11, -1]
-    print(get_closest_pair(numbers1, numbers2))
-    print(get_closest_pair(numbers1, [1, 2, 3]))
+    #numbers1 = [5, 9, 0, -3, 15, 8, 4]
+    #numbers2 = [12, 13, 8, 2, 0, 11, -1]
+    #print(get_closest_pair(numbers1, numbers2))
+    #print(get_closest_pair(numbers1, [1, 2, 3]))
     
     
-    #print(get_proper_divisors(12))
-    #print(get_proper_divisors(29)) 
-    #print(get_proper_divisors(1))
+    print(get_proper_divisors(12))
+    print(get_proper_divisors(29)) 
+    print(get_proper_divisors(268435457))
     
     
     #numbers = [3, 9, 2, 10, 14, 20, 13]
