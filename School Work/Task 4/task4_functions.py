@@ -2,8 +2,10 @@ from random import randrange
 
 #-----------------------------------------------------------------------------
 def get_closest(values, target):
+
     """
     """
+
     prev = 0
 
     for i in values():
@@ -39,24 +41,26 @@ def get_closest_pair(values1, values2):
 
 #-----------------------------------------------------------------------------
 def get_proper_divisors(number):
+
     """
     """
 
     num_list =[]
-    
-    if number != 1:
-        num_list.append(1)
 
     for i in range(2, ((number//2)+1)):
         div_num = number / i
         if div_num == int(div_num):
             num_list.append(int(div_num))
 
+    if number != 1:
+        num_list.append(1)
+
     return num_list
 
 
 #-----------------------------------------------------------------------------
 def rolling_averages(values, size):
+
     return []
 
 
@@ -113,9 +117,9 @@ if __name__ == "__main__":
     #print(get_closest_pair(numbers1, [1, 2, 3]))
     
     
-    print(get_proper_divisors(12))
-    print(get_proper_divisors(29)) 
-    print(get_proper_divisors(268435457))
+    #print(get_proper_divisors(12))
+    #print(get_proper_divisors(29)) 
+    #print(get_proper_divisors(268435457))
     
     
     #numbers = [3, 9, 2, 10, 14, 20, 13]
