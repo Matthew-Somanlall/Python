@@ -61,7 +61,9 @@ def get_proper_divisors(number):
 #-----------------------------------------------------------------------------
 def rolling_averages(values, size):
 
-    return []
+    output = [sum(values[i:i+size])/size for i in range(len(values)-size+1)]
+
+    return output
 
 
 #-----------------------------------------------------------------------------
@@ -122,10 +124,10 @@ if __name__ == "__main__":
     #print(get_proper_divisors(268435457))
     
     
-    #numbers = [3, 9, 2, 10, 14, 20, 13]
-    #print(rolling_averages(numbers, 2))	
-    #print(rolling_averages(numbers, 4))	 
-    #print(rolling_averages(numbers, 10))	 
+    numbers = [3, 9, 2, 10, 14, 20, 13]
+    print(rolling_averages(numbers, 2))	
+    print(rolling_averages(numbers, 4))	 
+    print(rolling_averages(numbers, 10))	 
 
     
     #lines = ["Computer", "Science", "is", "a challenge", "for MANY", "people"]
