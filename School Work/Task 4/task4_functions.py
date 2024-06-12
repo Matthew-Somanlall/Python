@@ -60,14 +60,23 @@ def get_proper_divisors(number):
 
 #-----------------------------------------------------------------------------
 def rolling_averages(values, size):
+    
+    """
+    """
 
-    output = [sum(values[i:i+size])/size for i in range(len(values)-size+1)]
+    output = []
+
+    for i in range(len(values)-size+1):
+        output.append(sum(values[i:i+size])/size)
 
     return output
 
 
 #-----------------------------------------------------------------------------
 def align_strings(strings, substr):
+
+
+
     return ""
 
 
@@ -86,7 +95,12 @@ def make_decks(num_decks: int) -> str:
 
 #-----------------------------------------------------------------------------
 def deal_n_cards(cards, n):
-    return []
+
+    new_list = cards[0:n]
+    for card in new_list:
+        cards.remove(card)
+
+    return new_list
 
 
 #-----------------------------------------------------------------------------
@@ -124,10 +138,10 @@ if __name__ == "__main__":
     #print(get_proper_divisors(268435457))
     
     
-    numbers = [3, 9, 2, 10, 14, 20, 13]
-    print(rolling_averages(numbers, 2))	
-    print(rolling_averages(numbers, 4))	 
-    print(rolling_averages(numbers, 10))	 
+    #numbers = [3, 9, 2, 10, 14, 20, 13]
+    #print(rolling_averages(numbers, 2))	
+    #print(rolling_averages(numbers, 4))	 
+    #print(rolling_averages(numbers, 10))	 
 
     
     #lines = ["Computer", "Science", "is", "a challenge", "for MANY", "people"]
@@ -136,11 +150,11 @@ if __name__ == "__main__":
     #print(align_strings(words, "The"))
     
     
-    #decks = make_decks(1)
-    #hand = deal_n_cards(decks, 8)
-    #print(len(hand), len(decks))
-    #print(hand)
-    #print(decks)
+    decks = make_decks(1)
+    hand = deal_n_cards(decks, 56)
+    print(len(hand), len(decks))
+    print(hand)
+    print(decks)
     
     
     #cards = ['T♣', 'A♠', '7♥', '4♣', '3♦', 'K♦', 'K♥', '5♣']
