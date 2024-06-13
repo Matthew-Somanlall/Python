@@ -43,8 +43,14 @@ def get_closest_pair(values1, values2):
 def get_proper_divisors(number):
 
     """
-    """
+    example: 72 sqr it
+    [1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36]
+    [1, 2, 36, 3, 24, 4, 18, 6, 12, 8, 9]
 
+    example: 100
+    [1, 2, 50, 4, 25, 5, 20, 10]
+    """
+    
     num_list =[]
 
     for i in range(2, ((number//2)+1)):
@@ -56,7 +62,6 @@ def get_proper_divisors(number):
         num_list.append(1)
 
     return num_list
-
 
 #-----------------------------------------------------------------------------
 def rolling_averages(values, size):
@@ -75,9 +80,8 @@ def rolling_averages(values, size):
 #-----------------------------------------------------------------------------
 def align_strings(strings, substr):
 
-    
 
-    return ""
+    return []
 
 
 #-----------------------------------------------------------------------------
@@ -162,9 +166,9 @@ if __name__ == "__main__":
     #print(get_closest_pair(numbers1, [1, 2, 3]))
     
     
-    #print(get_proper_divisors(12))
-    #print(get_proper_divisors(29)) 
-    #print(get_proper_divisors(268435457))
+    print(get_proper_divisors(12))
+    print(get_proper_divisors(29)) 
+    print(get_proper_divisors(268435457))
     
     
     #numbers = [3, 9, 2, 10, 14, 20, 13]
@@ -193,9 +197,9 @@ if __name__ == "__main__":
     #print(cards)
     
     
-    cards = ['T♣', 'A♠', '7♥', '4♣', '3♦', 'K♦', 'K♥', '5♣']
-    cards = shuffler(cards)
-    print(cards)
+    #cards = ['T♣', 'A♠', '7♥', '4♣', '3♦', 'K♦', 'K♥', '5♣']
+    #cards = shuffler(cards)
+    #print(cards)
     
     
     #cards = ['T♣', 'A♠', '7♥', '4♣', '3♦', 'K♦', 'K♥', '5♣']
