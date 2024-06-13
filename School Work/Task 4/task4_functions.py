@@ -1,4 +1,3 @@
-from random import randrange
 from random import randint
 
 #-----------------------------------------------------------------------------
@@ -144,6 +143,7 @@ def shuffler(values):
     new_deck.extend(right_half)
  
     return new_deck
+
 #-----------------------------------------------------------------------------
 if __name__ == "__main__":
     '''
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     print(cards)
     
     
-    cards = ['T♣', 'A♠', '7♥', '4♣', '3♦', 'K♦', 'K♥', '5♣']
-    cards = shuffler(cards)
-    print(cards)
+    #cards = ['T♣', 'A♠', '7♥', '4♣', '3♦', 'K♦', 'K♥', '5♣']
+    #cards = shuffler(cards)
+    #print(cards)
     
