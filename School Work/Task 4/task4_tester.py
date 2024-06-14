@@ -62,34 +62,27 @@ while choice != "8":
         
         
         '''***** TO DO: COMPLETE THE REQUIRED CODE BELOW HERE! *******'''
-        num_abundant = 0
+
         abundant = []
-        num_perfect = 0
         perfect = []
-        num_deficient = 0
         deficient = []
-        num_prime = 0
         prime = []
 
         for i in range(low, high +  1):
             divisors = get_proper_divisors(i)
             if sum(divisors) > i:
-                num_abundant += 1
                 abundant.append(i)
             elif sum(divisors) == i:
-                num_perfect += 1
                 perfect.append(i)
             else:
-                num_deficient += 1
                 deficient.append(i)
             if divisors == [1]:
-                num_prime += 1
                 prime.append(i)
 
-        print(f'In the numbers from {low} to {high}:\n--> {num_abundant} are abundant: {abundant}')
-        print(f'--> {num_perfect} are perfect: {perfect}')
-        print(f'--> {num_deficient} are deficient: {deficient}')
-        print(f'--> {num_prime} are prime: {prime}')
+        print(f'In the numbers from {low} to {high}:\n-> {len(abundant)} are abundant: {abundant}')
+        print(f'-> {len(perfect)} are perfect: {perfect}')
+        print(f'-> {len(deficient)} are deficient: {deficient}')
+        print(f'-> {len(prime)} are prime: {prime}')
         '''***** COMPLETE THE REQUIRED CODE ABOVE HERE! *******'''
 
         
@@ -121,8 +114,13 @@ while choice != "8":
 
         '''***** TO DO: COMPLETE THE REQUIRED CODE BELOW HERE! *******'''
 
+        values_1 = sum(values) / len(values)
 
-
+        while len(values) != 1:
+            values = rolling_averages(values, 2)
+        
+        print(f'All adjacent average: {values[0]}')
+        print(f'Actual average: {values_1}')
         '''***** COMPLETE THE REQUIRED CODE ABOVE HERE! *******'''
        
  

@@ -165,9 +165,6 @@ def align_strings(strings, substr):
             after = s[index+len(substr):].lower()
             processed_strings.append((before + highlight + after, index))
 
-    if not processed_strings:
-        return ""
-
     # Step 2: Find the maximum length of characters before the search string
     max_before_length = max(index for _, index in processed_strings)
 
@@ -313,10 +310,10 @@ if __name__ == "__main__":
     
     
     #print(get_proper_divisors(12))
-    #print(get_proper_divisors(100))
+    #print(get_proper_divisors(64))
     #print(get_proper_divisors(29)) 
     #print(get_proper_divisors(1))  
-    #print(get_proper_divisors(268435457))
+    print(get_proper_divisors(268435457))
     
     
     #numbers = [3, 9, 2, 10, 14, 20, 13]
@@ -325,10 +322,10 @@ if __name__ == "__main__":
     #print(rolling_averages(numbers, 10))	 
 
     
-    lines = ["Computer", "Science", "is", "a challenge", "for MANY", "people"]
-    print(align_strings(lines, "e"))
-    words = ["mathematics", "radius", "theorem", "breathe", "apothem", "area"]
-    print(align_strings(words, "The"))
+    #lines = ["Computer", "Science", "is", "a challenge", "for MANY", "people"]
+    #print(align_strings(lines, "e"))
+    #words = ["mathematics", "radius", "theorem", "breathe", "apothem", "area"]
+    #print(align_strings(words, "The"))
     
     
     #decks = make_decks(1)
